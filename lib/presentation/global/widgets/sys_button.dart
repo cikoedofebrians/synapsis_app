@@ -11,7 +11,7 @@ class SysButton extends StatelessWidget {
 
   final String title;
   final bool isInverse;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

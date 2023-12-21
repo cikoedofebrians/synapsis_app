@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:synapsis_app/presentation/survey/survey_list/widgets/survey_item.dart';
 import 'package:synapsis_app/themes/app_colors.dart';
 
 class SurveyListPage extends StatelessWidget {
@@ -24,15 +25,25 @@ class SurveyListPage extends StatelessWidget {
                         color: AppColors.primaryTextColor,
                       ),
                     ),
-                    Spacer(),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.output_rounded),
-                      color: AppColors.gray01,
-                    )
+                    const Spacer(),
+                    InkWell(
+                      onTap: () {},
+                      child: Icon(
+                        Icons.output_rounded,
+                        color: AppColors.gray01,
+                      ),
+                    ),
                   ],
                 ),
-              )
+              ),
+              Expanded(
+                child: ListView.separated(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  separatorBuilder: (_, index) => const SizedBox(height: 8),
+                  itemBuilder: (_, index) => Surveyitem(),
+                  itemCount: 10,
+                ),
+              ),
             ],
           ),
         ),
