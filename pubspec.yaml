@@ -43,6 +43,13 @@ dependencies:
   build_runner: ^2.4.7
   json_annotation: ^4.8.1
   json_serializable: ^6.7.1
+  dio: ^5.4.0
+  either_dart: ^1.0.0
+  internet_connection_checker: ^1.0.0+1
+  logger: ^2.0.2+1
+  equatable: ^2.0.5
+  bloc: ^8.1.2
+  flutter_secure_storage: ^9.0.0
 
 dev_dependencies:
   flutter_test:

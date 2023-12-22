@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:synapsis_app/presentation/survey/survey_take/survey_take_page.dart';
-import 'package:synapsis_app/themes/app_colors.dart';
+import 'package:synapsis_app/core/themes/app_colors.dart';
 
 class Surveyitem extends StatelessWidget {
   const Surveyitem({super.key});

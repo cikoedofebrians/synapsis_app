@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:synapsis_app/presentation/survey/survey_list/widgets/survey_item.dart';
-import 'package:synapsis_app/themes/app_colors.dart';
+import 'package:synapsis_app/core/themes/app_colors.dart';
 
 class SurveyListPage extends StatelessWidget {
   const SurveyListPage({super.key});
@@ -27,7 +27,9 @@ class SurveyListPage extends StatelessWidget {
                     ),
                     const Spacer(),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
                       child: Icon(
                         Icons.output_rounded,
                         color: AppColors.gray01,

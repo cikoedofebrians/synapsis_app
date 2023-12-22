@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:synapsis_app/themes/app_colors.dart';
+import 'package:synapsis_app/core/themes/app_colors.dart';
 
 class SysButton extends StatelessWidget {
   const SysButton({
@@ -7,10 +7,12 @@ class SysButton extends StatelessWidget {
     this.isInverse = false,
     required this.onTap,
     required this.title,
+    this.isLoading = false,
   });
 
   final String title;
   final bool isInverse;
+  final bool isLoading;
   final VoidCallback? onTap;
 
   @override
@@ -27,15 +29,20 @@ class SysButton extends StatelessWidget {
           color: isInverse ? AppColors.secondaryColor : AppColors.primaryColor,
           borderRadius: BorderRadius.circular(4),
         ),
-        child: Text(
-          title,
-          style: TextStyle(
-            color:
-                isInverse ? AppColors.primaryColor : AppColors.secondaryColor,
-            fontSize: 15,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+        child: isLoading
+            ? const CircularProgressIndicator.adaptive(
+                backgroundColor: Colors.white,
+              )
+            : Text(
+                title,
+                style: TextStyle(
+                  color: isInverse
+                      ? AppColors.primaryColor
+                      : AppColors.secondaryColor,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
       ),
     );
   }

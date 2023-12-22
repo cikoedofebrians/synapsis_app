@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:synapsis_app/themes/app_colors.dart';
+import 'package:synapsis_app/core/themes/app_colors.dart';
 
 class SysTextField extends StatelessWidget {
-  const SysTextField({
-    super.key,
-    this.onChange,
-    this.textInputType,
-    this.textEditingController,
-  });
+  const SysTextField(
+      {super.key,
+      this.onChange,
+      this.textInputType,
+      this.textEditingController,
+      this.obsecureText = false});
 
   final Function(String)? onChange;
   final TextInputType? textInputType;
   final TextEditingController? textEditingController;
+  final bool obsecureText;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      obscureText: obsecureText,
       controller: textEditingController,
       onChanged: onChange,
       keyboardType: textInputType,

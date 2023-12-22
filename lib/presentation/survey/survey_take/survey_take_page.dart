@@ -1,7 +1,6 @@
-import 'package:dev/dev.dart';
 import 'package:flutter/material.dart';
-import 'package:synapsis_app/presentation/global/widgets/sys_button.dart';
-import 'package:synapsis_app/themes/app_colors.dart';
+import 'package:synapsis_app/core/shared/widgets/sys_button.dart';
+import 'package:synapsis_app/core/themes/app_colors.dart';
 
 class SurveyTakePage extends StatefulWidget {
   const SurveyTakePage({super.key});
