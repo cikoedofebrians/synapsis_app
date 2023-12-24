@@ -19,50 +19,62 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() checkIfSignIgn,
     required TResult Function(String nik) onChangeNIK,
     required TResult Function(String password) onChangePassword,
     required TResult Function(bool newValue) onChangeRememberMe,
+    required TResult Function() logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? checkIfSignIgn,
     TResult? Function(String nik)? onChangeNIK,
     TResult? Function(String password)? onChangePassword,
     TResult? Function(bool newValue)? onChangeRememberMe,
+    TResult? Function()? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? checkIfSignIgn,
     TResult Function(String nik)? onChangeNIK,
     TResult Function(String password)? onChangePassword,
     TResult Function(bool newValue)? onChangeRememberMe,
+    TResult Function()? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEvent value) login,
+    required TResult Function(CheckIfSignInEvent value) checkIfSignIgn,
     required TResult Function(OnChangeNIKEvent value) onChangeNIK,
     required TResult Function(OnChangePasswordEvent value) onChangePassword,
     required TResult Function(OnChangeRememberMeEvent value) onChangeRememberMe,
+    required TResult Function(LogoutEvent value) logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginEvent value)? login,
+    TResult? Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult? Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult? Function(OnChangePasswordEvent value)? onChangePassword,
     TResult? Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult? Function(LogoutEvent value)? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEvent value)? login,
+    TResult Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult Function(OnChangePasswordEvent value)? onChangePassword,
     TResult Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult Function(LogoutEvent value)? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -124,9 +136,11 @@ class _$LoginEventImpl implements LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() checkIfSignIgn,
     required TResult Function(String nik) onChangeNIK,
     required TResult Function(String password) onChangePassword,
     required TResult Function(bool newValue) onChangeRememberMe,
+    required TResult Function() logout,
   }) {
     return login();
   }
@@ -135,9 +149,11 @@ class _$LoginEventImpl implements LoginEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? checkIfSignIgn,
     TResult? Function(String nik)? onChangeNIK,
     TResult? Function(String password)? onChangePassword,
     TResult? Function(bool newValue)? onChangeRememberMe,
+    TResult? Function()? logout,
   }) {
     return login?.call();
   }
@@ -146,9 +162,11 @@ class _$LoginEventImpl implements LoginEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? checkIfSignIgn,
     TResult Function(String nik)? onChangeNIK,
     TResult Function(String password)? onChangePassword,
     TResult Function(bool newValue)? onChangeRememberMe,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -161,9 +179,11 @@ class _$LoginEventImpl implements LoginEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEvent value) login,
+    required TResult Function(CheckIfSignInEvent value) checkIfSignIgn,
     required TResult Function(OnChangeNIKEvent value) onChangeNIK,
     required TResult Function(OnChangePasswordEvent value) onChangePassword,
     required TResult Function(OnChangeRememberMeEvent value) onChangeRememberMe,
+    required TResult Function(LogoutEvent value) logout,
   }) {
     return login(this);
   }
@@ -172,9 +192,11 @@ class _$LoginEventImpl implements LoginEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginEvent value)? login,
+    TResult? Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult? Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult? Function(OnChangePasswordEvent value)? onChangePassword,
     TResult? Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult? Function(LogoutEvent value)? logout,
   }) {
     return login?.call(this);
   }
@@ -183,9 +205,11 @@ class _$LoginEventImpl implements LoginEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEvent value)? login,
+    TResult Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult Function(OnChangePasswordEvent value)? onChangePassword,
     TResult Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult Function(LogoutEvent value)? logout,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -197,6 +221,132 @@ class _$LoginEventImpl implements LoginEvent {
 
 abstract class LoginEvent implements AuthEvent {
   const factory LoginEvent() = _$LoginEventImpl;
+}
+
+/// @nodoc
+abstract class _$$CheckIfSignInEventImplCopyWith<$Res> {
+  factory _$$CheckIfSignInEventImplCopyWith(_$CheckIfSignInEventImpl value,
+          $Res Function(_$CheckIfSignInEventImpl) then) =
+      __$$CheckIfSignInEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckIfSignInEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$CheckIfSignInEventImpl>
+    implements _$$CheckIfSignInEventImplCopyWith<$Res> {
+  __$$CheckIfSignInEventImplCopyWithImpl(_$CheckIfSignInEventImpl _value,
+      $Res Function(_$CheckIfSignInEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CheckIfSignInEventImpl implements CheckIfSignInEvent {
+  const _$CheckIfSignInEventImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.checkIfSignIgn()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CheckIfSignInEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() checkIfSignIgn,
+    required TResult Function(String nik) onChangeNIK,
+    required TResult Function(String password) onChangePassword,
+    required TResult Function(bool newValue) onChangeRememberMe,
+    required TResult Function() logout,
+  }) {
+    return checkIfSignIgn();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? checkIfSignIgn,
+    TResult? Function(String nik)? onChangeNIK,
+    TResult? Function(String password)? onChangePassword,
+    TResult? Function(bool newValue)? onChangeRememberMe,
+    TResult? Function()? logout,
+  }) {
+    return checkIfSignIgn?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? checkIfSignIgn,
+    TResult Function(String nik)? onChangeNIK,
+    TResult Function(String password)? onChangePassword,
+    TResult Function(bool newValue)? onChangeRememberMe,
+    TResult Function()? logout,
+    required TResult orElse(),
+  }) {
+    if (checkIfSignIgn != null) {
+      return checkIfSignIgn();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginEvent value) login,
+    required TResult Function(CheckIfSignInEvent value) checkIfSignIgn,
+    required TResult Function(OnChangeNIKEvent value) onChangeNIK,
+    required TResult Function(OnChangePasswordEvent value) onChangePassword,
+    required TResult Function(OnChangeRememberMeEvent value) onChangeRememberMe,
+    required TResult Function(LogoutEvent value) logout,
+  }) {
+    return checkIfSignIgn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginEvent value)? login,
+    TResult? Function(CheckIfSignInEvent value)? checkIfSignIgn,
+    TResult? Function(OnChangeNIKEvent value)? onChangeNIK,
+    TResult? Function(OnChangePasswordEvent value)? onChangePassword,
+    TResult? Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult? Function(LogoutEvent value)? logout,
+  }) {
+    return checkIfSignIgn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginEvent value)? login,
+    TResult Function(CheckIfSignInEvent value)? checkIfSignIgn,
+    TResult Function(OnChangeNIKEvent value)? onChangeNIK,
+    TResult Function(OnChangePasswordEvent value)? onChangePassword,
+    TResult Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult Function(LogoutEvent value)? logout,
+    required TResult orElse(),
+  }) {
+    if (checkIfSignIgn != null) {
+      return checkIfSignIgn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckIfSignInEvent implements AuthEvent {
+  const factory CheckIfSignInEvent() = _$CheckIfSignInEventImpl;
 }
 
 /// @nodoc
@@ -265,9 +415,11 @@ class _$OnChangeNIKEventImpl implements OnChangeNIKEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() checkIfSignIgn,
     required TResult Function(String nik) onChangeNIK,
     required TResult Function(String password) onChangePassword,
     required TResult Function(bool newValue) onChangeRememberMe,
+    required TResult Function() logout,
   }) {
     return onChangeNIK(nik);
   }
@@ -276,9 +428,11 @@ class _$OnChangeNIKEventImpl implements OnChangeNIKEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? checkIfSignIgn,
     TResult? Function(String nik)? onChangeNIK,
     TResult? Function(String password)? onChangePassword,
     TResult? Function(bool newValue)? onChangeRememberMe,
+    TResult? Function()? logout,
   }) {
     return onChangeNIK?.call(nik);
   }
@@ -287,9 +441,11 @@ class _$OnChangeNIKEventImpl implements OnChangeNIKEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? checkIfSignIgn,
     TResult Function(String nik)? onChangeNIK,
     TResult Function(String password)? onChangePassword,
     TResult Function(bool newValue)? onChangeRememberMe,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (onChangeNIK != null) {
@@ -302,9 +458,11 @@ class _$OnChangeNIKEventImpl implements OnChangeNIKEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEvent value) login,
+    required TResult Function(CheckIfSignInEvent value) checkIfSignIgn,
     required TResult Function(OnChangeNIKEvent value) onChangeNIK,
     required TResult Function(OnChangePasswordEvent value) onChangePassword,
     required TResult Function(OnChangeRememberMeEvent value) onChangeRememberMe,
+    required TResult Function(LogoutEvent value) logout,
   }) {
     return onChangeNIK(this);
   }
@@ -313,9 +471,11 @@ class _$OnChangeNIKEventImpl implements OnChangeNIKEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginEvent value)? login,
+    TResult? Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult? Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult? Function(OnChangePasswordEvent value)? onChangePassword,
     TResult? Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult? Function(LogoutEvent value)? logout,
   }) {
     return onChangeNIK?.call(this);
   }
@@ -324,9 +484,11 @@ class _$OnChangeNIKEventImpl implements OnChangeNIKEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEvent value)? login,
+    TResult Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult Function(OnChangePasswordEvent value)? onChangePassword,
     TResult Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult Function(LogoutEvent value)? logout,
     required TResult orElse(),
   }) {
     if (onChangeNIK != null) {
@@ -413,9 +575,11 @@ class _$OnChangePasswordEventImpl implements OnChangePasswordEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() checkIfSignIgn,
     required TResult Function(String nik) onChangeNIK,
     required TResult Function(String password) onChangePassword,
     required TResult Function(bool newValue) onChangeRememberMe,
+    required TResult Function() logout,
   }) {
     return onChangePassword(password);
   }
@@ -424,9 +588,11 @@ class _$OnChangePasswordEventImpl implements OnChangePasswordEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? checkIfSignIgn,
     TResult? Function(String nik)? onChangeNIK,
     TResult? Function(String password)? onChangePassword,
     TResult? Function(bool newValue)? onChangeRememberMe,
+    TResult? Function()? logout,
   }) {
     return onChangePassword?.call(password);
   }
@@ -435,9 +601,11 @@ class _$OnChangePasswordEventImpl implements OnChangePasswordEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? checkIfSignIgn,
     TResult Function(String nik)? onChangeNIK,
     TResult Function(String password)? onChangePassword,
     TResult Function(bool newValue)? onChangeRememberMe,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (onChangePassword != null) {
@@ -450,9 +618,11 @@ class _$OnChangePasswordEventImpl implements OnChangePasswordEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEvent value) login,
+    required TResult Function(CheckIfSignInEvent value) checkIfSignIgn,
     required TResult Function(OnChangeNIKEvent value) onChangeNIK,
     required TResult Function(OnChangePasswordEvent value) onChangePassword,
     required TResult Function(OnChangeRememberMeEvent value) onChangeRememberMe,
+    required TResult Function(LogoutEvent value) logout,
   }) {
     return onChangePassword(this);
   }
@@ -461,9 +631,11 @@ class _$OnChangePasswordEventImpl implements OnChangePasswordEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginEvent value)? login,
+    TResult? Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult? Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult? Function(OnChangePasswordEvent value)? onChangePassword,
     TResult? Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult? Function(LogoutEvent value)? logout,
   }) {
     return onChangePassword?.call(this);
   }
@@ -472,9 +644,11 @@ class _$OnChangePasswordEventImpl implements OnChangePasswordEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEvent value)? login,
+    TResult Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult Function(OnChangePasswordEvent value)? onChangePassword,
     TResult Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult Function(LogoutEvent value)? logout,
     required TResult orElse(),
   }) {
     if (onChangePassword != null) {
@@ -563,9 +737,11 @@ class _$OnChangeRememberMeEventImpl implements OnChangeRememberMeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() checkIfSignIgn,
     required TResult Function(String nik) onChangeNIK,
     required TResult Function(String password) onChangePassword,
     required TResult Function(bool newValue) onChangeRememberMe,
+    required TResult Function() logout,
   }) {
     return onChangeRememberMe(newValue);
   }
@@ -574,9 +750,11 @@ class _$OnChangeRememberMeEventImpl implements OnChangeRememberMeEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? checkIfSignIgn,
     TResult? Function(String nik)? onChangeNIK,
     TResult? Function(String password)? onChangePassword,
     TResult? Function(bool newValue)? onChangeRememberMe,
+    TResult? Function()? logout,
   }) {
     return onChangeRememberMe?.call(newValue);
   }
@@ -585,9 +763,11 @@ class _$OnChangeRememberMeEventImpl implements OnChangeRememberMeEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? checkIfSignIgn,
     TResult Function(String nik)? onChangeNIK,
     TResult Function(String password)? onChangePassword,
     TResult Function(bool newValue)? onChangeRememberMe,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (onChangeRememberMe != null) {
@@ -600,9 +780,11 @@ class _$OnChangeRememberMeEventImpl implements OnChangeRememberMeEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginEvent value) login,
+    required TResult Function(CheckIfSignInEvent value) checkIfSignIgn,
     required TResult Function(OnChangeNIKEvent value) onChangeNIK,
     required TResult Function(OnChangePasswordEvent value) onChangePassword,
     required TResult Function(OnChangeRememberMeEvent value) onChangeRememberMe,
+    required TResult Function(LogoutEvent value) logout,
   }) {
     return onChangeRememberMe(this);
   }
@@ -611,9 +793,11 @@ class _$OnChangeRememberMeEventImpl implements OnChangeRememberMeEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginEvent value)? login,
+    TResult? Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult? Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult? Function(OnChangePasswordEvent value)? onChangePassword,
     TResult? Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult? Function(LogoutEvent value)? logout,
   }) {
     return onChangeRememberMe?.call(this);
   }
@@ -622,9 +806,11 @@ class _$OnChangeRememberMeEventImpl implements OnChangeRememberMeEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginEvent value)? login,
+    TResult Function(CheckIfSignInEvent value)? checkIfSignIgn,
     TResult Function(OnChangeNIKEvent value)? onChangeNIK,
     TResult Function(OnChangePasswordEvent value)? onChangePassword,
     TResult Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult Function(LogoutEvent value)? logout,
     required TResult orElse(),
   }) {
     if (onChangeRememberMe != null) {
@@ -642,6 +828,132 @@ abstract class OnChangeRememberMeEvent implements AuthEvent {
   @JsonKey(ignore: true)
   _$$OnChangeRememberMeEventImplCopyWith<_$OnChangeRememberMeEventImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogoutEventImplCopyWith<$Res> {
+  factory _$$LogoutEventImplCopyWith(
+          _$LogoutEventImpl value, $Res Function(_$LogoutEventImpl) then) =
+      __$$LogoutEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogoutEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$LogoutEventImpl>
+    implements _$$LogoutEventImplCopyWith<$Res> {
+  __$$LogoutEventImplCopyWithImpl(
+      _$LogoutEventImpl _value, $Res Function(_$LogoutEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LogoutEventImpl implements LogoutEvent {
+  const _$LogoutEventImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.logout()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() checkIfSignIgn,
+    required TResult Function(String nik) onChangeNIK,
+    required TResult Function(String password) onChangePassword,
+    required TResult Function(bool newValue) onChangeRememberMe,
+    required TResult Function() logout,
+  }) {
+    return logout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? checkIfSignIgn,
+    TResult? Function(String nik)? onChangeNIK,
+    TResult? Function(String password)? onChangePassword,
+    TResult? Function(bool newValue)? onChangeRememberMe,
+    TResult? Function()? logout,
+  }) {
+    return logout?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? checkIfSignIgn,
+    TResult Function(String nik)? onChangeNIK,
+    TResult Function(String password)? onChangePassword,
+    TResult Function(bool newValue)? onChangeRememberMe,
+    TResult Function()? logout,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginEvent value) login,
+    required TResult Function(CheckIfSignInEvent value) checkIfSignIgn,
+    required TResult Function(OnChangeNIKEvent value) onChangeNIK,
+    required TResult Function(OnChangePasswordEvent value) onChangePassword,
+    required TResult Function(OnChangeRememberMeEvent value) onChangeRememberMe,
+    required TResult Function(LogoutEvent value) logout,
+  }) {
+    return logout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginEvent value)? login,
+    TResult? Function(CheckIfSignInEvent value)? checkIfSignIgn,
+    TResult? Function(OnChangeNIKEvent value)? onChangeNIK,
+    TResult? Function(OnChangePasswordEvent value)? onChangePassword,
+    TResult? Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult? Function(LogoutEvent value)? logout,
+  }) {
+    return logout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginEvent value)? login,
+    TResult Function(CheckIfSignInEvent value)? checkIfSignIgn,
+    TResult Function(OnChangeNIKEvent value)? onChangeNIK,
+    TResult Function(OnChangePasswordEvent value)? onChangePassword,
+    TResult Function(OnChangeRememberMeEvent value)? onChangeRememberMe,
+    TResult Function(LogoutEvent value)? logout,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutEvent implements AuthEvent {
+  const factory LogoutEvent() = _$LogoutEventImpl;
 }
 
 /// @nodoc
@@ -779,7 +1091,7 @@ class _$AuthStateImpl implements _AuthState {
       {this.isRemember = false,
       this.nik = "",
       this.password = "",
-      this.authStatus = AuthStatus.signedOut,
+      this.authStatus = AuthStatus.initial,
       this.message = ""});
 
   @override

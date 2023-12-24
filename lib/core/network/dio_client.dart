@@ -1,13 +1,15 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:dio/dio.dart';
+import 'package:synapsis_app/core/service/token_service.dart';
 
-const String BASE_URL = "https://reqres.in/api";
+const String BASE_URL = "https://dev-api-lms.apps-madhani.com/v1";
 const String CONTENT_TYPE = "application/json";
 
 class DioClient {
   final Dio _dio;
-  const DioClient(this._dio);
+  final TokenService _tokenService;
+  const DioClient(this._dio, this._tokenService);
 
   init() {
     _dio.options = BaseOptions(
@@ -22,15 +24,24 @@ class DioClient {
   Future<Response> get(
     String url, {
     Map<String, dynamic>? queryParameters,
-    Options? options,
     CancelToken? cancelToken,
     ProgressCallback? onReceiveProgress,
+    bool requiresToken = false,
   }) async {
     try {
+      String? token = '';
+      if (requiresToken) {
+        token = await _tokenService.getToken();
+      }
+
       final Response response = await _dio.get(
         url,
         queryParameters: queryParameters,
-        options: options,
+        options: requiresToken
+            ? Options(headers: {
+                'Cookie': token,
+              })
+            : null,
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgress,
       );

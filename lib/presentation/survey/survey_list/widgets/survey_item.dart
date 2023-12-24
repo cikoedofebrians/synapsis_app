@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
+import 'package:synapsis_app/domain/entity/survey/survey_entity.dart';
 import 'package:synapsis_app/presentation/survey/survey_take/survey_take_page.dart';
 import 'package:synapsis_app/core/themes/app_colors.dart';
 
 class Surveyitem extends StatelessWidget {
-  const Surveyitem({super.key});
+  const Surveyitem({super.key, required this.survey});
+
+  final SurveyEntity survey;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => SurveyTakePage(),
+        builder: (context) => const SurveyTakePage(),
       )),
       borderRadius: BorderRadius.circular(4),
       child: Container(
@@ -22,24 +26,33 @@ class Surveyitem extends StatelessWidget {
             children: [
               SvgPicture.asset("assets/images/survey-logo.svg"),
               const SizedBox(width: 8),
-              const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Survei A",
-                        style: TextStyle(
-                          color: AppColors.primaryTextColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                        )),
-                    SizedBox(height: 8),
-                    Text("Created At: 23 Jan 2023",
-                        style: TextStyle(
-                            fontSize: 12,
+              Expanded(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(survey.name,
+                          style: const TextStyle(
+                            color: AppColors.primaryTextColor,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.secondaryTextColor))
-                  ])
+                          )),
+                      const SizedBox(height: 8),
+                      Text("Created At: ${formatDateString(survey.createdAt)}",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.secondaryTextColor))
+                    ]),
+              )
             ],
           )),
     );
   }
+}
+
+String formatDateString(String inputDateStr) {
+  DateTime inputDate = DateTime.parse(inputDateStr);
+  return DateFormat("d MMM y").format(inputDate);
 }

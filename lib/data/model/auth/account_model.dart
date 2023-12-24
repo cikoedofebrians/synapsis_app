@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:synapsis_app/domain/entity/account_entity.dart';
+import 'package:synapsis_app/domain/entity/auth/account_entity.dart';
 part 'account_model.freezed.dart';
 part 'account_model.g.dart';
 

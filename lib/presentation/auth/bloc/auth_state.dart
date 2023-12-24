@@ -6,7 +6,7 @@ class AuthState with _$AuthState {
     @Default(false) bool isRemember,
     @Default("") String nik,
     @Default("") String password,
-    @Default(AuthStatus.signedOut) AuthStatus authStatus,
+    @Default(AuthStatus.initial) AuthStatus authStatus,
     @Default("") String message,
   }) = _AuthState;
 }
@@ -16,4 +16,5 @@ enum AuthStatus {
   loading,
   success,
   failed,
+  initial,
 }
