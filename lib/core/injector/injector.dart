@@ -16,9 +16,12 @@ import 'package:synapsis_app/domain/repository/survey_repository.dart';
 import 'package:synapsis_app/domain/usecase/auth/chec_signin_use_case.dart';
 import 'package:synapsis_app/domain/usecase/auth/login_use_case.dart';
 import 'package:synapsis_app/domain/usecase/auth/logout_use_case.dart';
+import 'package:synapsis_app/domain/usecase/survey/get_survey_details_usecase.dart';
 import 'package:synapsis_app/domain/usecase/survey/get_survey_list_usecase.dart';
 import 'package:synapsis_app/presentation/auth/bloc/auth_bloc.dart';
 import 'package:synapsis_app/presentation/survey/survey_list/bloc/survey_list_bloc.dart';
+import 'package:synapsis_app/presentation/survey/survey_take/bloc/survey_take_bloc.dart';
+import 'package:synapsis_app/presentation/survey/survey_take/cubit/timer_cubit.dart';
 
 final getIt = GetIt.I;
 void configureDependencies() {
@@ -65,4 +68,8 @@ void configureDependencies() {
       getIt<SurveyRemoteDataSource>(), getIt<NetworkInfo>()));
   getIt.registerFactory(() => GetSurveyListUsecase(getIt<SurveyRepository>()));
   getIt.registerFactory(() => SurveyListBloc(getIt<GetSurveyListUsecase>()));
+  getIt.registerFactory(
+      () => GetSurveyDetailsUsecase(getIt<SurveyRepository>()));
+  getIt.registerFactory(() => TimerCubit());
+  getIt.registerFactory(() => SurveyTakeBloc(getIt<GetSurveyDetailsUsecase>()));
 }

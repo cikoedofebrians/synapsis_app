@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:synapsis_app/domain/entity/survey/survey_entity.dart';
-import 'package:synapsis_app/presentation/survey/survey_take/survey_take_page.dart';
+import 'package:synapsis_app/presentation/survey/survey_take/screens/survey_take_page.dart';
 import 'package:synapsis_app/core/themes/app_colors.dart';
 
 class Surveyitem extends StatelessWidget {
@@ -14,7 +14,9 @@ class Surveyitem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => const SurveyTakePage(),
+        builder: (context) => SurveyTakePage(
+          id: survey.id,
+        ),
       )),
       borderRadius: BorderRadius.circular(4),
       child: Container(
@@ -40,7 +42,7 @@ class Surveyitem extends StatelessWidget {
                       Text("Created At: ${formatDateString(survey.createdAt)}",
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               color: AppColors.secondaryTextColor))

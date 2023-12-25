@@ -11,18 +11,14 @@ sealed class TokenService {
   Future<void> deleteToken();
 
   setTemporaryToken(String tempToken);
-
-  printTemporarytoken();
 }
 
 class TokenServiceImpl extends TokenService {
   final FlutterSecureStorage _storage;
   TokenServiceImpl(this._storage);
 
-  String _temporaryToken = '';
   @override
   Future<void> deleteToken() async {
-    _temporaryToken = "";
     if (getIt.isRegistered<TemporaryToken>()) {
       getIt.unregister<TemporaryToken>();
     }
@@ -46,11 +42,6 @@ class TokenServiceImpl extends TokenService {
   @override
   setTemporaryToken(String tempToken) {
     getIt.registerFactory(() => TemporaryToken(tempToken));
-  }
-
-  @override
-  printTemporarytoken() {
-    print("halooo ${_temporaryToken}");
   }
 }
 
